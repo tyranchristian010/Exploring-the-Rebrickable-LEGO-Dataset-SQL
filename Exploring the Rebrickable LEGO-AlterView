@@ -1,0 +1,33 @@
+USE [Rebrickable]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER VIEW [dbo].[analytics_main] AS 
+SELECT 
+	s.set_num,
+	s.name AS set_name,
+	s.year,
+	s.theme_id,
+	CAST(s.num_parts AS numeric) AS num_parts,
+	
+	t.name AS theme_name,
+	t.parent_id,
+
+	p.name AS parent_theme_name,
+CASE
+	WHEN s.year BETWEEN 1901 AND 2000 THEN '20th_Century'
+	WHEN s.year BETWEEN 2001 AND 2100 THEN '21st_Century'
+	END
+	AS Century
+FROM dbo.sets AS s
+LEFT JOIN dbo.themes AS t
+ON s.theme_id = t.id
+LEFT JOIN dbo.themes p
+ON t.parent_id=p.id
+GO
+
