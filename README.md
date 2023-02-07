@@ -1,2 +1,2 @@
 # Exploring-the-Rebrickable-LEGO-Dataset-SQL
-In this project, I examine the data model of the Rebrickable LEGO Dataset and established a database for analytical purposes. The project covered a range of SQL-related topics, including basic queries, advanced techniques such as JOINS, CTEs, and WINDOW functions.
+The LEGO Rebrickable dataset was also analyzed through the use of SQL queries, including the application of advanced techniques such as Common Table Expressions (CTEs), joins, and window functions. The aim was to gain insights into the parts, themes, and sets produced by LEGO since its inception. This project also involved the creation of a database using SQL and the import of files into the database through SSIS, thereby enhancing database and data import skills.
